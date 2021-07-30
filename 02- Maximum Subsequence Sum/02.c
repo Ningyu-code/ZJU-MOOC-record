@@ -27,13 +27,13 @@ int seqsum(int a[],int n,int *j1,int *j2){
         }
         if(a[i]>0) fu2=1;
     }
-    if(fu==0){
-        *j1=0;
+    if(fu==0){										//所有数全是负数 
+        *j1=0;										//和为0，输出整个数列的第一个数和最后一个数 
         *j2=n-1;
         return maxseq;
     }
-    if(fu2==0){
-        *j1=aim;
+    if(fu2==0){										//输入数为0和负数 
+        *j1=aim;									//输出和为0，最大子列和0的第一个数和最后一个数自然也是0 
         *j2=aim;
         return maxseq;
     }
