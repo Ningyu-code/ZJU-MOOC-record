@@ -47,24 +47,39 @@ List read()
 	return s;	
 }
 //第二个函数
+//void Print(List L){
+//	List r = L->Next;
+//	if(r){
+//		List p = (List)malloc(sizeof(struct Node));
+//		p = L;
+//		if(p->Next){
+//			p = p->Next;
+//			printf("%d %d",p->coe,p->exp);//题目格式要求
+//			while(p->Next){
+//				p = p->Next;
+//				printf(" %d %d",p->coe,p->exp);
+//			}
+//		}
+//	}else{
+//		printf("0 0");
+//	}
+//	printf("\n");
+//}
 void Print(List L){
 	List r = L->Next;
-	if(r){
-		List p = (List)malloc(sizeof(struct Node));
-		p = L;
-		if(p->Next){
-			p = p->Next;
-			printf("%d %d",p->coe,p->exp);//题目格式要求
-			while(p->Next){
-				p = p->Next;
-				printf(" %d %d",p->coe,p->exp);
-			}
-		}
+    if(r){
+        printf("%d %d",r->coe,r->exp);
+        r = r->Next;
+    	while(r){
+        printf(" %d %d",r->coe,r->exp);
+        r = r->Next;
+    	}
 	}else{
-		printf("0 0");
-	}
-	printf("\n");
+        printf("0 0");
+    }
+    printf("\n");
 }
+
 List add(List L1,List L2){
 	List pa,pb,pc,L;
 	L = (List)malloc(sizeof(struct Node));
